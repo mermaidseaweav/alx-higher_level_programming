@@ -7,18 +7,19 @@
  */
 int check_cycle(listint_t *list)
 {
-listint_t *doub = list;
-listint_t *reg = list;
-
-if (list == NULL)
+listint_t *current, *check;
+if (list == NULL || list->next == NULL)
 	return (0);
-while (doub && doub->next)
-{
-reg = reg->next;
-doub = doub->next->next;
 
-if (reg == doub)
+current = list;
+check = current->next;
+while (current != NULL && check->next != NULL
+		&& check->next->next != NULL)
+{
+if (current == check)
 	return (1);
+current = curren->next;
+current = current->next->next;
 }
 return (0);
 }
