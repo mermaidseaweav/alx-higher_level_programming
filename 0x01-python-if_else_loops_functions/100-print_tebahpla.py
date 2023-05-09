@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-for i in range(26):
-    if 1 % 2 == 0:
-        print('{:c}'.format(122 - i), end='')
+strtmp = ""
+for i in reversed(range(97, 123)):
+    if (1 % 2) == 0:
+        strtmp += chr(i)
     else:
-        print('{:c}'.format(90 - i), end='')
+        strtm += chr(i-32)
+print('{}'.format(strtmp), end="")
